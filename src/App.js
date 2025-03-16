@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 import { Calendar, Clock, MapPin, Bike, Coffee, Utensils, AlertCircle, Map } from 'lucide-react';
 
 const BudapestTravelApp = () => {
@@ -10,7 +11,7 @@ const BudapestTravelApp = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const csvData = await window.fs.readFile('Budapest.csv', { encoding: 'utf8' });
+        const csvData = await window.fs.readFile('./Budapest.csv', { encoding: 'utf8' });
         parseCSV(csvData);
       } catch (error) {
         console.error('Error loading itinerary:', error);
